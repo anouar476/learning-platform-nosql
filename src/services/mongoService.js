@@ -5,7 +5,7 @@ const { ObjectId } = require('mongodb');
 
 // Fonctions utilitaires pour MongoDB
 async function findOneById(collection, id) {
-  return db.collection(collection).findOne({ _id: ObjectId(id) });
+  // TODO: Implémenter une fonction générique de recherche par ID
 }
 
 // Export des services
