@@ -4,7 +4,7 @@
 // Question : Comment gérer proprement la fermeture des connexions ?
 // Réponse : Implémenter des fonctions de nettoyage qui ferment les connexions aux bases de données 
 // lors de la terminaison de l'application ou d'une erreur critique, en écoutant les événements de processus 
-// comme 'SIGINT' ou 'SIGTERM' et en appelant les méthodes de fermeture appropriées sur les clients de base de données.
+// comme 'SIGINT'  ou 'SIGTERM' et en appelant les méthodes de fermeture appropriées sur les clients de base de données.
 
 const { MongoClient } = require('mongodb');
 const redis = require('redis');
