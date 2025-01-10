@@ -11,20 +11,26 @@ const requiredEnvVars = [
   'MONGODB_DB_NAME',
   'REDIS_URI'
 ];
-
 // Validation des variables d'environnement
 function validateEnv() {
   // TODO: Implémenter la validation
   // Si une variable manque, lever une erreur explicative
+  requiredEnvVars.forEach((envVar) => {
+    if (!process.env[envVar]) {
+      throw new Error(`La variable d'environnement ${envVar} est manquante.`);
+    }
+  });
 }
+
+validateEnv();
 
 module.exports = {
   mongodb: {
-    uri: process.env.MONGODB_URI,
-    dbName: process.env.MONGODB_DB_NAME
+    uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/learning_platform', 
+    dbName: process.env.MONGODB_DB_NAME || 'learning_platform',
   },
   redis: {
-    uri: process.env.REDIS_URI
+    uri: process.env.REDIS_URI || 'redis://localhost:6379', 
   },
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3000,
 };
