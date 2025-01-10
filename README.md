@@ -15,11 +15,11 @@ Pour configurer Redis et MongoDB, suivez les étapes ci-dessous :
    Téléchargez les images de Redis et MongoDB depuis le registre Docker.
    ![Pull Redis](<pull redis.png>)
    ![Pull MongoDB](<pull mongodb.png>)
-   ![run MongoDB](runMongoDb.png) 
-   ![run Redis](runRedis.png)
+
 2. **Démarrer les conteneurs** :
    Lancez les conteneurs Redis et MongoDB.
-
+   ![run MongoDB](runMongoDb.png) 
+   ![run Redis](runRedis.png)
 3. **Vérifier l'état des conteneurs** :
    Assurez-vous que les conteneurs fonctionnent correctement.
    ![Statut des conteneurs](<conteneur stats.png>)
