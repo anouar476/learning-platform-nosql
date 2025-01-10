@@ -26,11 +26,11 @@ validateEnv();
 
 module.exports = {
   mongodb: {
-    uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/learning_platform', 
+    uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/learning_platform', // Par défaut Mongo local path
     dbName: process.env.MONGODB_DB_NAME || 'learning_platform',
   },
   redis: {
-    uri: process.env.REDIS_URI || 'redis://localhost:6379', 
+    uri: process.env.REDIS_URI || 'redis://localhost:6379', // Par défaut Redis local path
   },
   port: process.env.PORT || 3000,
 };

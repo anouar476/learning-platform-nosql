@@ -6,11 +6,12 @@
 // lors de la terminaison de l'application ou d'une erreur critique, en écoutant les événements de processus 
 // comme 'SIGINT'  ou 'SIGTERM' et en appelant les méthodes de fermeture appropriées sur les clients de base de données.
 
-import { MongoClient } from 'mongodb';
-import redis from 'redis';
-import config from './env';
+const { MongoClient } = require('mongodb');
+const redis = require('redis');
+const config = require('./env');
 
 let mongoClient, redisClient, db;
+
 
 async function connectMongo() {
   // TODO: Implémenter la connexion MongoDB
@@ -44,11 +45,11 @@ async function closeConnections() {
   if (redisClient) await redisClient.disconnect();
 }
 // Export des fonctions et clients
-export {
+module.exports = {
   // TODO: Exporter les clients et fonctions utiles
   connectMongo,
   connectRedis,
   closeConnections,
-  getDb,
-  getRedisClient,
+  getDb: () => db,
+  getRedisClient: () => redisClient,
 };
