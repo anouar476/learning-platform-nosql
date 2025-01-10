@@ -1,7 +1,7 @@
 // Question: Pourquoi est-il important de valider les variables d'environnement au démarrage ?
-// Réponse : 
+// Réponse : Pour éviter les erreurs d'exécution dues à des configurations manquantes ou incorrectes.
 // Question: Que se passe-t-il si une variable requise est manquante ?
-// Réponse : 
+// Réponse : L'application peut ne pas fonctionner correctement, ou même échouer à démarrer.
 
 const dotenv = require('dotenv');
 dotenv.config();
