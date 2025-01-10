@@ -1,60 +1,45 @@
 # Projet de fin de module NoSQL
-## realise par anouar moudad
-Pour ce projet, vous allez créer une petite API qui va servir de backend à une plateforme d'apprentissage en ligne. J'ai préparé la structure du projet avec une organisation professionnelle du code, comme vous pouvez le constater dans ce dépôt Github.
+## Course Management System
 
-Commençons par l'organisation pratique :
+### Réalisé par Anouar Moudad
 
-1. Création de votre dépôt :
-   - Sur Github.com
-   - Créez un nouveau dépôt public
-   - Nommez-le "learning-platform-nosql"
-   - Ne l'initialisez pas avec un README pour le moment
+Ce projet est une application backend pour la gestion des cours, offrant des fonctionnalités de création, mise à jour, suppression et récupération de données.
 
-2. Configuration de votre environnement local :
-   ```bash
-   # Clonez mon dépôt template (ce dépôt)
-   git clone https://github.com/pr-daaif/learning-platform-template
-   
-   # Renommez le dépôt origin
-   cd learning-platform-template
-   git remote remove origin
-   
-   # Ajoutez votre dépôt comme nouvelle origine
-   git remote add origin https://github.com/[votre-compte]/learning-platform-nosql
-   
-   # Poussez le code vers votre dépôt
-   git push -u origin main
-   ```
+## Comment lancer le projet
 
-3. Installation des dépendances :
-   ```bash
-   npm install
-   ```
+### Configurer Redis et MongoDB avec Docker
 
-Je vous propose une structure de code qui suit les bonnes pratiques de développement. Vous trouverez dans le code des commentaires avec des **questions qui vous guideront dans votre réflexion**. Ces questions sont importantes car elles vous aideront à comprendre les choix d'architecture.
+Pour configurer Redis et MongoDB, suivez les étapes ci-dessous :
 
-### Aspects professionnels à noter :
-- Utilisation des variables d'environnement pour la configuration
-- Séparation claire des responsabilités (routes, contrôleurs, services)
-- Gestion propre des connexions aux bases de données
-- Organisation modulaire du code
-- Gestion des erreurs et des cas limites
-- Documentation du code
+1. **Télécharger les images Docker** :
+   Téléchargez les images de Redis et MongoDB depuis le registre Docker.
+   ![Pull Redis](<pull redis.png>)
+   ![Pull MongoDB](<pull mongodb.png>)
+   ![run MongoDB](runMongoDb.png) 
+   ![run Redis](runRedis.png)
+2. **Démarrer les conteneurs** :
+   Lancez les conteneurs Redis et MongoDB.
 
-### Pour le rendu, voici ce que j'attends :
-1. Un dépôt public sur Github avec un historique de commits clair
-2. Un README.md qui explique :
-   - Comment installer et lancer le projet
-   - La structure du projet
-   - Les choix techniques que vous avez faits
-   - Les réponses aux questions posées dans les commentaires
-3. Le code complété avec tous les TODOs implémentés
+3. **Vérifier l'état des conteneurs** :
+   Assurez-vous que les conteneurs fonctionnent correctement.
+   ![Statut des conteneurs](<conteneur stats.png>)
 
-### Je vous conseille de procéder étape par étape :
-1. Commencez par lire et comprendre la structure du projet
-2. Répondez aux questions des commentaires dans le README
-3. Implémentez progressivement les TODOs
-4. Testez chaque fonctionnalité au fur et à mesure
-5. Documentez vos choix et vos réflexions en ajoutant des copies d'écrans à votre fichier README.md
+### Démarrer l'application
 
-#### Bon courage
+Pour démarrer l'application, utilisez la commande suivante :
+```bash
+npm start
+```
+   ![Démarrer l'application](<run App.png>)
+
+### Fonctionnalités de l'application
+
+- **Ajout de cours** :
+  Ajoutez quelques cours à notre collection en utilisant mongosh.
+  ![Insertion de données de cours](<inster data to couses.png>)
+- **Recherche de cours** :
+  Recherchez des cours dans la base de données.
+  ![Recherche de cours](<find course .png>)
+- **Statistiques des cours** :
+  Consultez les statistiques des cours.
+  ![Statistiques des cours](image.png)
